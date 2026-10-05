@@ -1,0 +1,515 @@
+/*
+Understory v0.2.1
+A quiet, field-notebook-inspired Obsidian theme.
+
+Design principles:
+- warm paper / walnut rather than stark white / black
+- bookish note typography, unobtrusive interface typography
+- moss and autumn accents used sparingly
+- generous reading measure and line height
+- CSS variables first; selectors only where they add character
+*/
+
+/* ---------- Shared foundations ---------- */
+
+body {
+  --font-interface-theme: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-text-theme: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-monospace-theme: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  --font-text-size: 17px;
+  --line-height-normal: 1.68;
+  --file-line-width: 760px;
+
+  --radius-s: 5px;
+  --radius-m: 8px;
+  --radius-l: 12px;
+
+  --h1-font: var(--font-text-theme);
+  --h2-font: var(--font-text-theme);
+  --h3-font: var(--font-text-theme);
+  --h4-font: var(--font-text-theme);
+  --h5-font: var(--font-text-theme);
+  --h6-font: var(--font-text-theme);
+
+  --h1-weight: 650;
+  --h2-weight: 625;
+  --h3-weight: 600;
+  --h4-weight: 600;
+  --h5-weight: 600;
+  --h6-weight: 600;
+
+  --h1-size: 1.82em;
+  --h2-size: 1.46em;
+  --h3-size: 1.23em;
+  --h4-size: 1.08em;
+  --h5-size: 1em;
+  --h6-size: 0.94em;
+
+  --tab-font-size: 12.5px;
+  --tab-font-weight: 500;
+  --tab-radius-active: 7px 7px 0 0;
+
+  --tag-radius: 999px;
+  --tag-padding-x: 0.55em;
+  --tag-padding-y: 0.16em;
+
+  --callout-radius: 8px;
+  --callout-border-width: 0 0 0 3px;
+}
+
+/* ---------- Light: parchment / leaf / walnut ---------- */
+
+.theme-light {
+  --understory-paper: #f3ecdf;
+  --understory-paper-alt: #ebe1d1;
+  --understory-paper-deep: #dfd2bd;
+  --understory-ink: #302c26;
+  --understory-muted: #746b5e;
+  --understory-faint: #9b907e;
+  --understory-moss: #68734f;
+  --understory-moss-deep: #52603c;
+  --understory-walnut: #6c4f3b;
+  --understory-gold: #a17e3f;
+  --understory-rust: #8a5f43;
+
+  --understory-moss-rgb: 104, 115, 79;
+  --understory-walnut-rgb: 108, 79, 59;
+  --understory-gold-rgb: 161, 126, 63;
+  --understory-rust-rgb: 138, 95, 67;
+
+  --color-base-00: #f6f0e6;
+  --color-base-05: #f3ecdf;
+  --color-base-10: #efe6d8;
+  --color-base-20: #e8decd;
+  --color-base-25: #e1d5c2;
+  --color-base-30: #d8cab5;
+  --color-base-35: #cdbda5;
+  --color-base-40: #b8a88f;
+  --color-base-50: #9f927d;
+  --color-base-60: #7f7464;
+  --color-base-70: #665e52;
+  --color-base-100: #302c26;
+
+  --background-primary: var(--understory-paper);
+  --background-primary-alt: #eee4d5;
+  --background-secondary: #e9dfcf;
+  --background-secondary-alt: #e2d6c4;
+
+  --background-modifier-hover: #e5d8c5;
+  --background-modifier-active-hover: #ddcfba;
+  --background-modifier-border: #d4c5ae;
+  --background-modifier-border-hover: #b9a98f;
+  --background-modifier-border-focus: var(--understory-moss);
+
+  --text-normal: var(--understory-ink);
+  --text-muted: var(--understory-muted);
+  --text-faint: var(--understory-faint);
+  --text-accent: var(--understory-moss-deep);
+  --text-accent-hover: #43512f;
+
+  --text-selection: #d8d1a9;
+  --text-highlight-bg: #e6d49d;
+  --caret-color: var(--understory-walnut);
+
+  --accent-h: 77;
+  --accent-s: 19%;
+  --accent-l: 39%;
+
+  --link-color: #5b6b43;
+  --link-color-hover: #43542e;
+  --link-unresolved-color: #897d6b;
+  --link-external-color: #815b3c;
+  --link-external-color-hover: #68442c;
+
+  --tag-color: #53603f;
+  --tag-color-hover: #3f4d2e;
+  --tag-background: #e2dcc2;
+  --tag-background-hover: #d8d0b0;
+  --tag-border-color: #cac2a3;
+  --tag-border-color-hover: #aea584;
+
+  --h1-color: #3b332b;
+  --h2-color: #514739;
+  --h3-color: #5a6345;
+  --h4-color: #665a4c;
+  --h5-color: var(--text-muted);
+  --h6-color: var(--text-muted);
+
+  --blockquote-border-color: #a5a47a;
+  --blockquote-color: #585246;
+
+  --tab-container-background: #e6dbc9;
+  --tab-background-active: #f5ede1;
+  --tab-text-color: #817665;
+  --tab-text-color-active: #473f35;
+  --tab-text-color-focused: #716655;
+  --tab-text-color-focused-active: #463f35;
+  --tab-text-color-focused-active-current: #302c26;
+  --tab-divider-color: #d3c4ae;
+  --tab-outline-color: #d3c4ae;
+
+  --nav-item-color: #6e6558;
+  --nav-item-color-hover: #3d372f;
+  --nav-item-color-active: #302b25;
+  --nav-item-background-hover: #e5d9c7;
+  --nav-item-background-active: #ded1bd;
+  --nav-item-weight-active: 520;
+  --nav-indentation-guide-color: #d6c8b2;
+
+  --checkbox-border-color: #a89b86;
+  --checkbox-color: var(--understory-moss);
+  --checkbox-color-hover: var(--understory-moss-deep);
+
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: #c7baa5;
+  --scrollbar-active-thumb-bg: #aa9a82;
+
+  --graph-line: #b8aa95;
+  --graph-node: #756c5e;
+  --graph-node-focused: var(--understory-walnut);
+  --graph-node-tag: var(--understory-moss);
+  --graph-node-attachment: var(--understory-gold);
+  --graph-node-unresolved: #a5947d;
+
+  --link-unresolved-color: #806d59;
+  --link-unresolved-opacity: 0.82;
+  --link-unresolved-decoration-color: #ac9a82;
+  --link-unresolved-decoration-style: dotted;
+}
+
+/* ---------- Dark: walnut shell / cream / moss ---------- */
+
+.theme-dark {
+  --understory-night: #201c18;
+  --understory-night-alt: #191612;
+  --understory-night-raised: #29231e;
+  --understory-cream: #e6dccd;
+  --understory-muted: #afa391;
+  --understory-faint: #83796c;
+  --understory-moss: #98a477;
+  --understory-moss-bright: #aab88a;
+  --understory-walnut: #b18a69;
+  --understory-gold: #c09c58;
+  --understory-rust: #bd8060;
+
+  --understory-moss-rgb: 152, 164, 119;
+  --understory-walnut-rgb: 177, 138, 105;
+  --understory-gold-rgb: 192, 156, 88;
+  --understory-rust-rgb: 189, 128, 96;
+
+  --color-base-00: #171411;
+  --color-base-05: #1b1814;
+  --color-base-10: #201c18;
+  --color-base-20: #29231e;
+  --color-base-25: #302923;
+  --color-base-30: #3a322b;
+  --color-base-35: #463c33;
+  --color-base-40: #5b4f44;
+  --color-base-50: #75685a;
+  --color-base-60: #9b8e7d;
+  --color-base-70: #b8ad9d;
+  --color-base-100: #e6dccd;
+
+  --background-primary: var(--understory-night);
+  --background-primary-alt: #25201b;
+  --background-secondary: var(--understory-night-alt);
+  --background-secondary-alt: #211d19;
+
+  --background-modifier-hover: #302923;
+  --background-modifier-active-hover: #393129;
+  --background-modifier-border: #443a31;
+  --background-modifier-border-hover: #625447;
+  --background-modifier-border-focus: var(--understory-moss);
+
+  --text-normal: var(--understory-cream);
+  --text-muted: var(--understory-muted);
+  --text-faint: var(--understory-faint);
+  --text-accent: var(--understory-moss-bright);
+  --text-accent-hover: #becb9f;
+
+  --text-selection: #4e513b;
+  --text-highlight-bg: #66572f;
+  --caret-color: #d0a77f;
+
+  --accent-h: 77;
+  --accent-s: 21%;
+  --accent-l: 56%;
+
+  --link-color: #a9b889;
+  --link-color-hover: #c0ce9e;
+  --link-unresolved-color: #988b79;
+  --link-external-color: #c69771;
+  --link-external-color-hover: #ddb08b;
+
+  --tag-color: #bcc79f;
+  --tag-color-hover: #d3ddba;
+  --tag-background: #333526;
+  --tag-background-hover: #41452f;
+  --tag-border-color: #51543c;
+  --tag-border-color-hover: #686c4c;
+
+  --h1-color: #eee4d6;
+  --h2-color: #d9cdbd;
+  --h3-color: #bbc59c;
+  --h4-color: #c8b8a4;
+  --h5-color: var(--text-muted);
+  --h6-color: var(--text-muted);
+
+  --blockquote-border-color: #747b58;
+  --blockquote-color: #c4b9a9;
+
+  --tab-container-background: #171411;
+  --tab-background-active: #26201b;
+  --tab-text-color: #8d8171;
+  --tab-text-color-active: #d0c3b2;
+  --tab-text-color-focused: #a39787;
+  --tab-text-color-focused-active: #d6caba;
+  --tab-text-color-focused-active-current: #ece1d2;
+  --tab-divider-color: #3d352d;
+  --tab-outline-color: #3d352d;
+
+  --nav-item-color: #b4a796;
+  --nav-item-color-hover: #e6dbcc;
+  --nav-item-color-active: #f0e6d8;
+  --nav-item-background-hover: #302923;
+  --nav-item-background-active: #383128;
+  --nav-item-weight-active: 520;
+  --nav-indentation-guide-color: #443a31;
+
+  --checkbox-border-color: #716353;
+  --checkbox-color: var(--understory-moss);
+  --checkbox-color-hover: var(--understory-moss-bright);
+
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: #55493d;
+  --scrollbar-active-thumb-bg: #756453;
+
+  --graph-line: #5e5145;
+  --graph-node: #9b8e7d;
+  --graph-node-focused: var(--understory-walnut);
+  --graph-node-tag: var(--understory-moss);
+  --graph-node-attachment: var(--understory-gold);
+  --graph-node-unresolved: #7d7060;
+
+  --link-unresolved-color: #ae9278;
+  --link-unresolved-opacity: 0.86;
+  --link-unresolved-decoration-color: #766657;
+  --link-unresolved-decoration-style: dotted;
+}
+
+
+/* Slightly stronger current-tab cue without turning tabs into buttons. */
+.workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 color-mix(in oklch, var(--understory-moss) 58%, transparent);
+}
+
+.theme-dark .workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 color-mix(in oklch, var(--understory-moss) 66%, transparent);
+}
+
+/* ---------- Reading and editing ---------- */
+
+.markdown-source-view,
+.markdown-reading-view {
+  font-family: var(--font-text-theme);
+}
+
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-reading-view .markdown-preview-view {
+  letter-spacing: 0.002em;
+}
+
+/* Keep metadata and embedded UI from becoming overly bookish. */
+.metadata-container,
+.inline-title,
+.markdown-source-view .cm-gutters {
+  font-family: var(--font-interface-theme);
+}
+
+.inline-title {
+  color: var(--h1-color);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+/* Paragraph rhythm without changing editor block margins. */
+.markdown-reading-view p {
+  line-height: 1.68;
+}
+
+/* ---------- Links ---------- */
+
+.markdown-rendered a.internal-link,
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.markdown-rendered a.external-link {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+/* ---------- Tags ---------- */
+
+a.tag,
+.cm-hashtag {
+  font-family: var(--font-interface-theme);
+  font-size: 0.83em;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Blockquotes ---------- */
+
+.markdown-rendered blockquote {
+  background: color-mix(in oklch, var(--background-secondary) 52%, transparent);
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  padding: 0.65em 1em;
+}
+
+/* ---------- Callouts ---------- */
+
+.callout {
+  background-color: color-mix(in oklch, var(--background-secondary) 72%, transparent);
+  border-color: color-mix(in oklch, rgb(var(--callout-color)) 58%, var(--background-modifier-border));
+  box-shadow: none;
+}
+
+.callout-title {
+  font-family: var(--font-interface-theme);
+  font-size: 0.92em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Bring common built-in callouts into the Understory palette. */
+.callout[data-callout="note"],
+.callout[data-callout="info"],
+.callout[data-callout="tip"] {
+  --callout-color: var(--understory-moss-rgb);
+}
+
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] {
+  --callout-color: var(--understory-gold-rgb);
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] {
+  --callout-color: var(--understory-rust-rgb);
+}
+
+.callout[data-callout="quote"],
+.callout[data-callout="example"] {
+  --callout-color: var(--understory-walnut-rgb);
+}
+
+/* Understory-native research vocabulary. */
+.callout[data-callout="field"] {
+  --callout-color: var(--understory-moss-rgb);
+  --callout-icon: lucide-leaf;
+}
+
+.callout[data-callout="finding"] {
+  --callout-color: var(--understory-walnut-rgb);
+  --callout-icon: lucide-lightbulb;
+}
+
+.callout[data-callout="carry-forward"] {
+  --callout-color: var(--understory-gold-rgb);
+  --callout-icon: lucide-arrow-right-circle;
+}
+
+/* A little more breathing room for the research callouts. */
+.callout[data-callout="field"] .callout-content,
+.callout[data-callout="finding"] .callout-content,
+.callout[data-callout="carry-forward"] .callout-content {
+  padding-top: 0.1em;
+}
+
+/* ---------- Sidebar / navigation ---------- */
+
+.workspace-ribbon,
+.workspace-tab-header-container {
+  background-color: var(--background-secondary);
+}
+
+.nav-file-title,
+.nav-folder-title {
+  font-family: var(--font-interface-theme);
+  border-radius: var(--radius-s);
+}
+
+.nav-file-title.is-active {
+  background-color: color-mix(in oklch, var(--color-accent) 13%, var(--background-secondary));
+  color: var(--text-normal);
+}
+
+.nav-folder-title {
+  color: var(--text-muted);
+}
+
+.nav-folder-title:hover,
+.nav-file-title:hover {
+  color: var(--text-normal);
+}
+
+
+/* Active-file orientation: a quiet "you are here" marker. */
+.nav-file-title.is-active {
+  box-shadow: inset 2px 0 0 var(--understory-moss);
+}
+
+/* Keep folder selection softer than the current file. */
+.nav-folder-title.is-active {
+  box-shadow: none;
+}
+
+/* Match search hits to the autumn-highlight language. */
+.search-result-file-matched-text {
+  background-color: color-mix(in oklch, var(--understory-gold) 32%, transparent);
+  border-radius: 3px;
+}
+
+/* Tables should sit on the page rather than become mini spreadsheets. */
+.markdown-rendered th {
+  background-color: color-mix(in oklch, var(--background-secondary) 60%, transparent);
+}
+
+/* Make horizontal rules quieter still. */
+.markdown-rendered hr {
+  border-color: color-mix(in oklch, var(--background-modifier-border) 78%, transparent);
+}
+
+/* ---------- Small details ---------- */
+
+hr {
+  border-color: var(--background-modifier-border);
+}
+
+.markdown-rendered code,
+.markdown-source-view.mod-cm6 .cm-inline-code {
+  font-family: var(--font-monospace-theme);
+  border-radius: 4px;
+}
+
+.markdown-rendered table {
+  font-size: 0.94em;
+}
+
+.markdown-rendered th {
+  font-family: var(--font-interface-theme);
+  font-weight: 600;
+}
+
+/*
+Future Understory layers, intentionally deferred:
+- thinker / concept tag families
+- Bases tuning
+- Style Settings integration
+- mobile-specific refinements after real use
+- only deeper graph changes if real use asks for them
+*/
