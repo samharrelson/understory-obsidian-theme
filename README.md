@@ -4,7 +4,7 @@
 
 **Understory** is a warm, quiet Obsidian theme for long-form reading, research, field notes, and writing.
 
-Current release: **v0.2.1**.
+Current release: **v0.2.2**.
 
 It uses a parchment / walnut / moss visual language, with a light mode inspired by field notebooks and a dark mode built around walnut-shell browns rather than pure black.
 
