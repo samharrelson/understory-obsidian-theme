@@ -1,5 +1,7 @@
 # Understory
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23176386.svg)](https://doi.org/10.5281/zenodo.23176386)
+
 **Understory** is a warm, quiet Obsidian theme for long-form reading, research, field notes, and writing.
 
 Current release: **v0.2.1**.
