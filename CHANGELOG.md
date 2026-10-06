@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.2
+
+- Added `CITATION.cff` metadata.
+- Added ORCID identifier for Sam Harrelson.
+- Prepared release metadata for archival with Zenodo.
+
 ## 0.2.1
 
 - Increased sidebar navigation contrast slightly in both light and dark modes.
