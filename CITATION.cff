@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use Understory, please cite it using the metadata from this file."
+
+title: "Understory"
+type: software
+version: "0.2.2"
+date-released: "2026-10-05"
+
+authors:
+  - family-names: "Harrelson"
+    given-names: "Sam"
+    orcid: "https://orcid.org/0009-0003-8261-9316"
+
+abstract: >-
+  Understory is a warm, quiet Obsidian theme designed for long-form reading,
+  research, field notes, and writing. It uses parchment and walnut-shell
+  light and dark modes, bookish serif typography, restrained moss and autumn
+  accents, quieter navigation and graph styling, and native research callouts.
+
+repository-code: "https://github.com/samharrelson/understory-obsidian-theme"
+url: "https://github.com/samharrelson/understory-obsidian-theme"
+
+doi: "10.5281/zenodo.23176386"
+
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23176386"
+    description: "Archived release of Understory v0.2.2."
+
+license: "MIT"
+
+keywords:
+  - "Obsidian"
+  - "theme"
+  - "research"
+  - "field notes"
+  - "note-taking"
+  - "digital humanities"
