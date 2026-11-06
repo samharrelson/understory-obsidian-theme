@@ -3,6 +3,7 @@
 ## Unreleased — 0.2.3 candidate: The Next Episode
 
 - Add a quiet **opt-in** Field Journal signature for notes tagged with the native `cssclasses: [walnut-sit]` property: a rule under the inline title, subtle h2 markers in editor/reading modes, and gentler field callout backgrounds.
+- In Reading view, **prose first** for those field notes: hide their large Properties block without removing metadata or hiding it in Live Preview. Add `walnut-show-properties` to the `cssclasses` list for a reversible per-note override.
 - Add four **mutually exclusive** optional seasonal CSS snippets (spring leaf, summer canopy, autumn gold, and winter branch) that modify accent and link treatments without replacing the parchment/walnut backgrounds or typography.
 - Add an **optional compact Properties** snippet that keeps metadata readable and editable, as an alternative to Obsidian's native globally Hidden properties mode.
 - Align the theme manifest with the forthcoming 0.2.3 release. The existing GitHub 0.2.2 release was metadata-only; its archived software citation remains valid for that earlier snapshot.
