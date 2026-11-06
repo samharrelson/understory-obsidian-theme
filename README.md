@@ -94,19 +94,7 @@ cssclasses:
 ---
 ```
 
-In Obsidian's Properties panel, you can also add the `cssclasses` property with a list value `walnut-sit`. This affects the displayed title, section headings, and Understory `[!field]` callouts **only in notes carrying that class**. No folders or notes are automatically modified.
-
-**New: prose-first Reading view.** For `walnut-sit` notes, the theme hides the large Properties block **only in Reading view** and slightly tightens the gap after the displayed filename. Switch to **Live Preview** (`Cmd+E` on macOS) to see and edit those Properties again, or open the built-in **Properties view** sidebar. The YAML and its values stay intact; this is a CSS-only display change. Obsidian's global **Settings → Editor → Properties in document** can remain **Visible**.
-
-To show the Properties block even in Reading view for one particular field note, add `walnut-show-properties` as a **second item** in its existing `cssclasses` list:
-
-```yaml
-cssclasses:
-  - walnut-sit
-  - walnut-show-properties
-```
-
-Remove that second item to restore prose-first reading. The optional compact Properties snippet still applies whenever the Properties block is visible in Live Preview or another ordinary note.
+In Obsidian's Properties panel, you can also add the `cssclasses` property with a list value `walnut-sit`. This affects the displayed title, section headings, and Understory `[!field]` callouts **only in notes carrying that class**, in both Live Preview and Reading view as supported by Obsidian. The class name is an opt-in style convention, not a biological claim about the note or the tree. No folders or notes are automatically modified.
 
 ### Compatibility note: Obsidian 1.15 (November 2026)
 
