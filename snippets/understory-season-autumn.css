@@ -1,0 +1,29 @@
+/*
+ * Understory optional autumn palette (v0.2.3 candidate).
+ * Enable only ONE Understory seasonal palette at a time in
+ * Settings > Appearance > CSS snippets.
+ * Affects accent, links and the existing tab/file indicators;
+ * never changes the walnut/cream background or body typography.
+ */
+body.theme-light {
+  --understory-moss: #8b6935;
+  --understory-moss-deep: #705228;
+  --understory-moss-rgb: 139,105,53;
+  --color-accent: #8b6935;
+  --text-accent: #705228;
+  --text-accent-hover: #634721;
+  --link-color: #705228;
+  --link-color-hover: #634721;
+  --background-modifier-border-focus: var(--understory-moss);
+}
+body.theme-dark {
+  --understory-moss: #d1ab6d;
+  --understory-moss-bright: #e4c48e;
+  --understory-moss-rgb: 209,171,109;
+  --color-accent: #d1ab6d;
+  --text-accent: #e4c48e;
+  --text-accent-hover: #f1dbad;
+  --link-color: #d1ab6d;
+  --link-color-hover: #e4c48e;
+  --background-modifier-border-focus: var(--understory-moss);
+}
