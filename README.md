@@ -4,7 +4,7 @@
 
 **Understory** is a warm, quiet Obsidian theme for long-form reading, research, field notes, and writing.
 
-Current release: **v0.2.2**.
+Current **published** release: **v0.2.2**. **v0.2.3 is a review candidate**, not yet a GitHub release or an automatic Obsidian update.
 
 It uses a parchment / walnut / moss visual language, with a light mode inspired by field notebooks and a dark mode built around walnut-shell browns rather than pure black.
 
@@ -61,6 +61,50 @@ Settings → Appearance → Themes
 > [!carry-forward] Carry-forward question
 > What should remain live in the next reading, sit, or writing session?
 ```
+
+## Understory v0.2.3 candidate: The Next Episode
+
+Three deliberately small refinements preserve the original theme's typography, sidebar, and parchment/walnut backgrounds.
+
+### 1. A less dominant Properties panel (optional)
+
+To move directly to prose, use Obsidian's native **Settings → Editor → Properties in document → Hidden**. Your YAML remains intact; you can inspect it through the Properties view.
+
+If you prefer visible, editable metadata, install and enable [`understory-compact-properties.css`](snippets/understory-compact-properties.css) instead. This softens spacing and text weight without hiding fields. It does not automatically collapse or delete anything. The native Hidden option is global; the snippet changes only the presentation of visible metadata.
+
+### 2. Four seasonal accents (optional)
+
+Install **at most one** of these snippets at a time:
+
+- [Spring leaf](snippets/understory-season-spring.css)
+- [Summer canopy](snippets/understory-season-summer.css)
+- [Autumn walnut gold](snippets/understory-season-autumn.css)
+- [Winter branch](snippets/understory-season-winter.css)
+
+They adjust the moss/accent family used by links, active tab and file indicators, field rules, and related controls, while keeping backgrounds and fonts unchanged. The default Understory appearance remains unchanged if none is enabled. Seasonal switching is manual, not driven by the calendar. These standalone snippets are **not packaged into the basic two-file theme installation**.
+
+### 3. A quiet Field Journal signature (opt-in)
+
+The v0.2.3 `theme.css` recognizes the built-in `cssclasses` property. Add the following to a field note (or merge `walnut-sit` into any existing `cssclasses` list):
+
+```yaml
+---
+cssclasses:
+  - walnut-sit
+---
+```
+
+In Obsidian's Properties panel, you can also add the `cssclasses` property with a list value `walnut-sit`. This affects the displayed title, section headings, and Understory `[!field]` callouts **only in notes carrying that class**, in both Live Preview and Reading view as supported by Obsidian. The class name is an opt-in style convention, not a biological claim about the note or the tree. No folders or notes are automatically modified.
+
+### Preview installation before publishing v0.2.3
+
+1. **Back up your existing local `Understory` theme folder** in the vault's `.obsidian/themes/` directory before replacing anything.
+2. Download this branch's source from GitHub. When the review branch is merged, use **Code → Download ZIP** from the repository's `main` page; otherwise select the preview branch first.
+3. From the downloaded repository, copy **only** `theme.css` and `manifest.json` into the existing `.obsidian/themes/Understory/` folder. Keep the directory name `Understory`. Obsidian may need **Reload app** after changing the manifest.
+4. For optional accents and compact Properties, open **Settings → Appearance → CSS snippets → Open snippets folder**. Copy the desired files from this repository's `snippets/` folder there, click **Reload snippets**, and enable **one season at most** plus compact Properties if desired.
+5. Add `walnut-sit` to one test field note's `cssclasses` list. Compare its Live Preview and Reading view, light and dark modes, then check your usual mobile setup. If anything feels wrong, turn off the snippets and restore the backed-up theme folder.
+
+**Release step, only after testing:** Version `0.2.3` in `manifest.json` must match a future GitHub release tag `0.2.3`. If submitting through the Obsidian Community Themes directory, attach `manifest.json` and `theme.css` as files to that release. The optional snippets must still be installed separately. Do not use an old 0.2.2 version-specific software DOI as if it cited the new 0.2.3 build.
 
 ## Status
 
