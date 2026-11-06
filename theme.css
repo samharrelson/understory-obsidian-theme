@@ -531,29 +531,6 @@ hr {
   padding-inline-start: 0.65em;
 }
 
-/* Prose-first Field Journal Reading view.
- *
- * The native Properties panel still appears in Live Preview and Source mode,
- * where the note can be inspected or edited. Only a Reading-view note
- * explicitly marked walnut-sit is affected. The extra cssclass
- * walnut-show-properties acts as a per-note override.
- *
- * No frontmatter, metadata, or CSS-related properties are deleted.
- */
-.workspace-leaf-content[data-mode="preview"]
-.markdown-preview-view.walnut-sit:not(.walnut-show-properties)
-.metadata-container {
-  display: none;
-}
-
-/* With the large Properties block gone, bring prose a little closer to
- * the displayed filename without collapsing the deliberate title rule. */
-.workspace-leaf-content[data-mode="preview"]
-.markdown-preview-view.walnut-sit:not(.walnut-show-properties)
-.inline-title {
-  margin-block-end: 0.65em;
-}
-
 /* Field observation callouts are gently distinguished from other calls. */
 .walnut-sit .callout[data-callout="field"] {
   background-color: color-mix(
