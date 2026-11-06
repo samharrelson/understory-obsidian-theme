@@ -4,7 +4,7 @@
 
 **Understory** is a warm, quiet Obsidian theme for long-form reading, research, field notes, and writing.
 
-Current **published** release: **v0.2.2**. **v0.2.3 is a review candidate**, not yet a GitHub release or an automatic Obsidian update.
+**Current source version: v0.2.3.** Release tag: `0.2.3`. The previous archived release is v0.2.2; publish the 0.2.3 GitHub release with `manifest.json` and `theme.css` attached to finish distribution.
 
 It uses a parchment / walnut / moss visual language, with a light mode inspired by field notebooks and a dark mode built around walnut-shell browns rather than pure black.
 
@@ -62,7 +62,7 @@ Settings → Appearance → Themes
 > What should remain live in the next reading, sit, or writing session?
 ```
 
-## Understory v0.2.3 candidate: The Next Episode
+## Understory v0.2.3: The Next Episode
 
 Three deliberately small refinements preserve the original theme's typography, sidebar, and parchment/walnut backgrounds.
 
@@ -106,10 +106,10 @@ The November 3 **1.15.1 Desktop Catalyst** changelog lists search, speed, Live P
 
 Test especially: an existing long-Properties walnut note; Reading and Live Preview; the `walnut-sit` class; seasonal accent links and tags; the existing graph pane; light/dark; and an actual Mermaid diagram if you use one. On iPhone/iPad, check text sizing and the newly adjusted mobile sidebar layout. Do not raise the theme's `minAppVersion` merely because a newer Obsidian release is available.
 
-### Preview installation before publishing v0.2.3
+### Manual installation and release assets for v0.2.3
 
 1. **Back up your existing local `Understory` theme folder** in the vault's `.obsidian/themes/` directory before replacing anything.
-2. Download this branch's source from GitHub. When the review branch is merged, use **Code → Download ZIP** from the repository's `main` page; otherwise select the preview branch first.
+2. Download the current `main` branch using **Code → Download ZIP**. Do not reuse a ZIP of an older feature-branch preview.
 3. From the downloaded repository, copy **only** `theme.css` and `manifest.json` into the existing `.obsidian/themes/Understory/` folder. Keep the directory name `Understory`. Obsidian may need **Reload app** after changing the manifest.
 4. For optional accents and compact Properties, open **Settings → Appearance → CSS snippets → Open snippets folder**. Copy the desired files from this repository's `snippets/` folder there, click **Reload snippets**, and enable **one season at most** plus compact Properties if desired.
 5. Add `walnut-sit` to one test field note's `cssclasses` list. Compare its Live Preview and Reading view, light and dark modes, then check your usual mobile setup. If anything feels wrong, turn off the snippets and restore the backed-up theme folder.
