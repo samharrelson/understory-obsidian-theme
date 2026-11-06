@@ -96,6 +96,16 @@ cssclasses:
 
 In Obsidian's Properties panel, you can also add the `cssclasses` property with a list value `walnut-sit`. This affects the displayed title, section headings, and Understory `[!field]` callouts **only in notes carrying that class**, in both Live Preview and Reading view as supported by Obsidian. The class name is an opt-in style convention, not a biological claim about the note or the tree. No folders or notes are automatically modified.
 
+### Compatibility note: Obsidian 1.15 (November 2026)
+
+The November 2 public **Obsidian 1.15 Desktop** update introduces the Pele Mermaid renderer, which inherits the active theme's colors and fonts and offers responsive zoomable diagrams. Understory 0.2.3 does **not** override Mermaid internals, so no chart-specific CSS adaptation is proposed without a real rendering failure.
+
+The November 3 **1.15.1 Desktop Catalyst** changelog lists search, speed, Live Preview, and vault-sync changes; it does not announce a change to `cssclasses` or the CSS snippets API. The official Obsidian Help still documents `cssclasses` and the standard snippets workflow used here. This is a **source-level compatibility review**, not confirmation that the preview has rendered correctly on Obsidian 1.15.1.
+
+**Device check:** In 1.15.1, a vault newly *shared with you* does not automatically sync appearance, themes or snippets on first connection. Check Obsidian Sync settings on each device rather than assuming a Mac theme edit will appear on iPhone/iPad. This is not described as a change to previously connected personal vaults.
+
+Test especially: an existing long-Properties walnut note; Reading and Live Preview; the `walnut-sit` class; seasonal accent links and tags; the existing graph pane; light/dark; and an actual Mermaid diagram if you use one. On iPhone/iPad, check text sizing and the newly adjusted mobile sidebar layout. Do not raise the theme's `minAppVersion` merely because a newer Obsidian release is available.
+
 ### Preview installation before publishing v0.2.3
 
 1. **Back up your existing local `Understory` theme folder** in the vault's `.obsidian/themes/` directory before replacing anything.
