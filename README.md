@@ -2,6 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23176386.svg)](https://doi.org/10.5281/zenodo.23176386)
 
+*The DOI badge currently links to the archived v0.2.2 snapshot. The v0.2.3 DOI will be added after Zenodo ingests its GitHub release.*
+
 **Understory** is a warm, quiet Obsidian theme for long-form reading, research, field notes, and writing.
 
 **Current source version: v0.2.3.** Release tag: `0.2.3`. The previous archived release is v0.2.2; publish the 0.2.3 GitHub release with `manifest.json` and `theme.css` attached to finish distribution.
