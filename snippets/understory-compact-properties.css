@@ -1,0 +1,28 @@
+/*
+ * Understory optional compact Properties (v0.2.3 candidate).
+ * Keeps metadata editable and visible, but gives it less visual weight.
+ * For a true prose-first view without a Properties panel use the native
+ * Settings > Editor > Properties in document > Hidden setting instead.
+ *
+ * No properties are deleted, hidden by CSS, or made read-only.
+ */
+body .metadata-container {
+  --metadata-gap: 0.12em;
+  --metadata-padding: 0.45em 0 0.65em;
+  font-family: var(--font-interface-theme);
+  font-size: 0.9em;
+}
+body .metadata-container .metadata-property {
+  border-radius: var(--radius-s);
+}
+body .metadata-container .metadata-property-key {
+  color: var(--text-muted);
+}
+body .metadata-container .metadata-property-value {
+  line-height: 1.4;
+}
+body .metadata-container .metadata-properties-heading {
+  color: var(--text-faint);
+  font-size: 0.88em;
+  font-weight: 500;
+}
