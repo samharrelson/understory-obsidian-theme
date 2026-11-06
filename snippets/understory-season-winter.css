@@ -6,10 +6,10 @@
  * never changes the walnut/cream background or body typography.
  */
 body.theme-light {
-  --understory-moss: #55717e;
+  --understory-moss: #516b77;
   --understory-moss-deep: #3e5c69;
-  --understory-moss-rgb: 85,113,126;
-  --color-accent: #55717e;
+  --understory-moss-rgb: 81,107,119;
+  --color-accent: #516b77;
   --text-accent: #3e5c69;
   --text-accent-hover: #344e5b;
   --link-color: #3e5c69;
