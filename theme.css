@@ -1,5 +1,5 @@
 /*
-Understory v0.2.1
+Understory v0.2.3 (candidate)
 A quiet, field-notebook-inspired Obsidian theme.
 
 Design principles:
@@ -503,6 +503,41 @@ hr {
 .markdown-rendered th {
   font-family: var(--font-interface-theme);
   font-weight: 600;
+}
+
+/* ---------- Per-note field-journal signature (opt-in) ---------- */
+
+/*
+ * Notes with the built-in `cssclasses: [walnut-sit]` property gain
+ * restrained field-note typography cues. No filename or folder selectors:
+ * ordinary reading, meeting, and research notes remain unchanged.
+ */
+.walnut-sit {
+  --understory-field-rule: color-mix(in srgb, var(--understory-moss) 43%, transparent);
+  --understory-field-rule-strong: color-mix(in srgb, var(--understory-moss) 72%, transparent);
+}
+
+/* A bookish rule under the displayed title, in Reading or Live Preview. */
+.walnut-sit .inline-title {
+  border-block-end: 1px solid var(--understory-field-rule);
+  padding-block-end: 0.48em;
+  margin-block-end: 1.1em;
+}
+
+/* Field sections receive a quiet marker, not a new heading font or size. */
+.walnut-sit .markdown-rendered h2,
+.walnut-sit .cm-line.HyperMD-header-2 {
+  border-inline-start: 2px solid var(--understory-field-rule-strong);
+  padding-inline-start: 0.65em;
+}
+
+/* Field observation callouts are gently distinguished from other calls. */
+.walnut-sit .callout[data-callout="field"] {
+  background-color: color-mix(
+    in srgb,
+    var(--understory-moss) 8%,
+    var(--background-primary)
+  );
 }
 
 /*

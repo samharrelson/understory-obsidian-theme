@@ -1,0 +1,29 @@
+/*
+ * Understory optional spring palette (v0.2.3 candidate).
+ * Enable only ONE Understory seasonal palette at a time in
+ * Settings > Appearance > CSS snippets.
+ * Affects accent, links and the existing tab/file indicators;
+ * never changes the walnut/cream background or body typography.
+ */
+body.theme-light {
+  --understory-moss: #526d40;
+  --understory-moss-deep: #405c33;
+  --understory-moss-rgb: 82,109,64;
+  --color-accent: #526d40;
+  --text-accent: #405c33;
+  --text-accent-hover: #3c542f;
+  --link-color: #405c33;
+  --link-color-hover: #3c542f;
+  --background-modifier-border-focus: var(--understory-moss);
+}
+body.theme-dark {
+  --understory-moss: #a5c68f;
+  --understory-moss-bright: #bed6ad;
+  --understory-moss-rgb: 165,198,143;
+  --color-accent: #a5c68f;
+  --text-accent: #bed6ad;
+  --text-accent-hover: #d3e5c4;
+  --link-color: #a5c68f;
+  --link-color-hover: #bed6ad;
+  --background-modifier-border-focus: var(--understory-moss);
+}
